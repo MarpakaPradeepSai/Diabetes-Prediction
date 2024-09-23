@@ -42,7 +42,7 @@ insulin = float(insulin) if insulin else None
 bmi = float(bmi) if bmi else None
 diabetes_pedigree = float(diabetes_pedigree) if diabetes_pedigree else None
 
-# Add custom CSS for button color change
+# Add custom CSS to change button color without hover or active effect
 st.markdown("""
     <style>
     .stButton > button {
@@ -51,22 +51,24 @@ st.markdown("""
         border: none;
         transition: background-color 0.2s; /* Smooth transition for color change */
     }
-    .stButton > button.black {
-        background-color: black !important; /* Black color for clicked state */
+    .stButton > button.red {
+        background-color: red !important; /* Red color for clicked state */
     }
     </style>
     """, unsafe_allow_html=True)
 
 # Prediction button
-if st.button('Predict 🔎'):
-    # Change button color to black
-    st.markdown("<script>document.querySelector('.stButton > button').classList.add('black');</script>", unsafe_allow_html=True)
+button_clicked = st.button('Predict 🔎')
+
+if button_clicked:
+    # Change button color to red
+    st.markdown("<script>document.querySelector('.stButton > button').classList.add('red');</script>", unsafe_allow_html=True)
 
     # Brief delay to show the color change
     time.sleep(0.5)
 
     # Reset button color back to original
-    st.markdown("<script>document.querySelector('.stButton > button').classList.remove('black');</script>", unsafe_allow_html=True)
+    st.markdown("<script>document.querySelector('.stButton > button').classList.remove('red');</script>", unsafe_allow_html=True)
 
     if None in [pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree]:
         st.warning('⚠️ Please provide all fields.')
