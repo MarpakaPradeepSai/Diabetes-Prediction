@@ -14,23 +14,23 @@ def predict_diabetes(pregnancies, glucose, blood_pressure, skin_thickness, insul
 
 # Streamlit app
 st.title('🩺 Diabetes Prediction App 🍩')
-st.write('Enter the details below to check if you have diabetes.')
+st.write('Enter the details below to check if you have diabetes. 📝')
 
 # Input fields for the first 6 features organized in columns
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    pregnancies = st.text_input('Pregnancies', '')
-    blood_pressure = st.text_input('Blood Pressure', '')
-    diabetes_pedigree = st.text_input('Diabetes Pedigree Function', '')
+    pregnancies = st.text_input('👶 Pregnancies', '')
+    blood_pressure = st.text_input('🩸 Blood Pressure', '')
+    diabetes_pedigree = st.text_input('📊 Diabetes Pedigree Function', '')
 
 with col2:
-    glucose = st.text_input('Glucose Level', '')
-    skin_thickness = st.text_input('Skin Thickness', '')
+    glucose = st.text_input('💧 Glucose Level', '')
+    skin_thickness = st.text_input('🩹 Skin Thickness', '')
 
 with col3:
-    insulin = st.text_input('Insulin Level', '')
-    bmi = st.text_input('Body Mass Index (BMI)', '')
+    insulin = st.text_input('💉 Insulin Level', '')
+    bmi = st.text_input('⚖️ Body Mass Index (BMI)', '')
 
 # Convert inputs to appropriate types, treating empty inputs as None
 pregnancies = int(pregnancies) if pregnancies else None
