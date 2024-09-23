@@ -42,7 +42,7 @@ insulin = float(insulin) if insulin else None
 bmi = float(bmi) if bmi else None
 diabetes_pedigree = float(diabetes_pedigree) if diabetes_pedigree else None
 
-# Add custom CSS to change button color without hover or active effect
+# Add custom CSS for button color change
 st.markdown("""
     <style>
     .stButton > button {
@@ -58,9 +58,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Prediction button
-button_clicked = st.button('Predict 🔎')
-
-if button_clicked:
+if st.button('Predict 🔎'):
     # Change button color to black
     st.markdown("<script>document.querySelector('.stButton > button').classList.add('black');</script>", unsafe_allow_html=True)
 
