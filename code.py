@@ -48,7 +48,7 @@ st.markdown("""
         background-color: #007bff; /* Bootstrap primary blue */
         color: white; /* Text color */
         border: none;
-        transition: background-color 0s; /* No transition on click */
+        transition: background-color 0s, color 0s; /* No transition on click */
     }
     .stButton > button:focus,
     .stButton > button:active,
