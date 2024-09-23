@@ -50,9 +50,14 @@ st.markdown("""
         background-color: #007bff; /* Bootstrap primary blue */
         color: white;
         border: none;
+        transition: background-color 0s; /* No transition on click */
     }
     .stButton > button:focus {
         outline: none; /* Remove focus outline */
+        background-color: #007bff; /* Keep blue color on focus */
+    }
+    .stButton > button:active {
+        background-color: #007bff; /* Keep blue color on click */
     }
     </style>
     """, unsafe_allow_html=True)
