@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import time
 
 # Load the trained model
 model = joblib.load('best_naive_bayes_model.pkl')
@@ -48,20 +49,27 @@ st.markdown("""
         background-color: #007bff; /* Bootstrap primary blue */
         color: white !important; /* Text color */
         border: none;
-        transition: none; /* Remove all transitions */
+        transition: background-color 0.2s; /* Smooth transition for color change */
     }
-    .stButton > button:focus,
-    .stButton > button:active,
-    .stButton > button:hover {
-        outline: none; /* Remove focus outline */
-        background-color: #007bff !important; /* Keep blue color on focus and active */
-        color: white !important; /* Keep text color */
+    .stButton > button.red {
+        background-color: red !important; /* Red color for clicked state */
     }
     </style>
     """, unsafe_allow_html=True)
 
 # Prediction button
-if st.button('Predict 🔎'):
+button_clicked = st.button('Predict 🔎')
+
+if button_clicked:
+    # Change button color to red
+    st.markdown("<script>document.querySelector('.stButton > button').classList.add('red');</script>", unsafe_allow_html=True)
+
+    # Brief delay to show the color change
+    time.sleep(0.5)
+
+    # Reset button color back to original
+    st.markdown("<script>document.querySelector('.stButton > button').classList.remove('red');</script>", unsafe_allow_html=True)
+
     if None in [pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree]:
         st.warning('⚠️ Please provide all fields.')
     else:
