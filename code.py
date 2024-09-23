@@ -14,7 +14,7 @@ def predict_diabetes(pregnancies, glucose, blood_pressure, skin_thickness, insul
 
 # Streamlit app
 st.title('Diabetes Prediction App')
-st.write('Enter the details below to check if you have diabetes. Leave fields blank if you do not want to provide that information.')
+st.write('Enter the details below to check if you have diabetes.')
 
 # Input fields for the first 6 features organized in columns
 col1, col2, col3 = st.columns(3)
