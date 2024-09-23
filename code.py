@@ -68,13 +68,13 @@ if st.button('Predict'):
         result = predict_diabetes(pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree)
         if result == 1:
             st.markdown("""
-                <div style="background-color:red; padding:10px; color:white; text-align:center;">
+                <div style="background-color:red; padding:10px; color:white; text-align:center; border-radius:10px;">
                     You have a high risk of diabetes.
                 </div>
             """, unsafe_allow_html=True)
         else:
             st.markdown("""
-                <div style="background-color:green; padding:10px; color:white; text-align:center;">
+                <div style="background-color:green; padding:10px; color:white; text-align:center; border-radius:10px;">
                     You have a low risk of diabetes.
                 </div>
             """, unsafe_allow_html=True)
