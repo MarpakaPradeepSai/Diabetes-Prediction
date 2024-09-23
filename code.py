@@ -43,6 +43,19 @@ insulin = float(insulin) if insulin else None
 bmi = float(bmi) if bmi else None
 diabetes_pedigree = float(diabetes_pedigree) if diabetes_pedigree else None
 
+# Add custom CSS to change button color
+st.markdown("""
+    <style>
+    .stButton > button {
+        background-color: #007bff; /* Bootstrap primary blue */
+        color: white;
+    }
+    .stButton > button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # Prediction button
 if st.button('Predict'):
     if None in [pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree]:
