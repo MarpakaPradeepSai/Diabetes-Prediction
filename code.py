@@ -32,9 +32,6 @@ with col3:
     insulin = st.text_input('Insulin Level', '')
     bmi = st.text_input('Body Mass Index (BMI)', '')
 
-# Input field for the last feature in a new row
-#diabetes_pedigree = st.text_input('Diabetes Pedigree Function', '')
-
 # Convert inputs to appropriate types, treating empty inputs as None
 pregnancies = int(pregnancies) if pregnancies else None
 glucose = float(glucose) if glucose else None
@@ -54,7 +51,8 @@ st.markdown("""
         transition: background-color 0s; /* No transition on click */
     }
     .stButton > button:focus,
-    .stButton > button:active {
+    .stButton > button:active,
+    .stButton > button:hover {
         outline: none; /* Remove focus outline */
         background-color: #007bff; /* Keep blue color on focus and active */
         color: white; /* Keep text color */
