@@ -43,13 +43,16 @@ insulin = float(insulin) if insulin else None
 bmi = float(bmi) if bmi else None
 diabetes_pedigree = float(diabetes_pedigree) if diabetes_pedigree else None
 
-# Add custom CSS to change button color without hover effect
+# Add custom CSS to change button color without hover or active effect
 st.markdown("""
     <style>
     .stButton > button {
         background-color: #007bff; /* Bootstrap primary blue */
         color: white;
         border: none;
+    }
+    .stButton > button:focus {
+        outline: none; /* Remove focus outline */
     }
     </style>
     """, unsafe_allow_html=True)
