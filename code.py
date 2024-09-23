@@ -51,8 +51,8 @@ st.markdown("""
         border: none;
         transition: background-color 0.2s; /* Smooth transition for color change */
     }
-    .stButton > button.pink {
-        background-color: pink !important; /* Pink color for clicked state */
+    .stButton > button.black {
+        background-color: black !important; /* Black color for clicked state */
     }
     </style>
     """, unsafe_allow_html=True)
@@ -61,14 +61,14 @@ st.markdown("""
 button_clicked = st.button('Predict 🔎')
 
 if button_clicked:
-    # Change button color to pink
-    st.markdown("<script>document.querySelector('.stButton > button').classList.add('pink');</script>", unsafe_allow_html=True)
+    # Change button color to black
+    st.markdown("<script>document.querySelector('.stButton > button').classList.add('black');</script>", unsafe_allow_html=True)
 
     # Brief delay to show the color change
     time.sleep(0.5)
 
     # Reset button color back to original
-    st.markdown("<script>document.querySelector('.stButton > button').classList.remove('pink');</script>", unsafe_allow_html=True)
+    st.markdown("<script>document.querySelector('.stButton > button').classList.remove('black');</script>", unsafe_allow_html=True)
 
     if None in [pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree]:
         st.warning('⚠️ Please provide all fields.')
