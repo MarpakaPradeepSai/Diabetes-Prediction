@@ -34,17 +34,34 @@ with col3:
 # Input field for the last feature in a new row
 diabetes_pedigree = st.text_input('Diabetes Pedigree Function', '')
 
-# Convert inputs to appropriate types, treating empty inputs as None
-pregnancies = int(pregnancies) if pregnancies else None
-glucose = float(glucose) if glucose else None
-blood_pressure = float(blood_pressure) if blood_pressure else None
-skin_thickness = float(skin_thickness) if skin_thickness else None
-insulin = float(insulin) if insulin else None
-bmi = float(bmi) if bmi else None
-diabetes_pedigree = float(diabetes_pedigree) if diabetes_pedigree else None
+# CSS to style the button
+st.markdown("""
+    <style>
+    .blue-button {
+        background-color: #007bff; /* Blue color */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .blue-button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 # Prediction button
-if st.button('Predict'):
+if st.button('Predict', key='predict_button', help='Click to make a prediction', css_class='blue-button'):
+    pregnancies = int(pregnancies) if pregnancies else None
+    glucose = float(glucose) if glucose else None
+    blood_pressure = float(blood_pressure) if blood_pressure else None
+    skin_thickness = float(skin_thickness) if skin_thickness else None
+    insulin = float(insulin) if insulin else None
+    bmi = float(bmi) if bmi else None
+    diabetes_pedigree = float(diabetes_pedigree) if diabetes_pedigree else None
+
     if None in [pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree]:
         st.warning('Please provide all fields or leave them blank if you prefer not to input a value.')
     else:
