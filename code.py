@@ -61,7 +61,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Prediction button
-if st.button('Predict🔍'):
+if st.button('Predict🔎'):
     if None in [pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree]:
         st.warning('⚠️ Please provide all fields.')
     else:
