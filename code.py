@@ -16,7 +16,7 @@ def predict_diabetes(pregnancies, glucose, blood_pressure, skin_thickness, insul
 st.title('🩺 Diabetes Prediction App 🍩')
 st.write('Enter the details below to check if you have diabetes. 📝')
 
-# Input fields for the first 6 features organized in columns
+# Input fields for the first 7 features organized in columns
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -69,12 +69,12 @@ if st.button('🔍 Predict'):
         if result == 1:
             st.markdown("""
                 <div style="background-color:red; padding:10px; color:white; text-align:center; border-radius:10px;">
-                    🚨 You have a **high risk** of diabetes.
+                    🚨 You have a <strong>high risk</strong> of diabetes.
                 </div>
             """, unsafe_allow_html=True)
         else:
             st.markdown("""
                 <div style="background-color:green; padding:10px; color:white; text-align:center; border-radius:10px;">
-                    ✅ You have a **low risk** of diabetes.
+                    ✅ You have a <strong>low risk</strong> of diabetes.
                 </div>
             """, unsafe_allow_html=True)
