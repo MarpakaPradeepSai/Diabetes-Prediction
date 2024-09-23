@@ -69,7 +69,7 @@ if st.button('Predict 🔎'):
         if result == 1:
             st.markdown("""
                 <div style="background-color:red; padding:20px; text-align:center; border-radius:10px;">
-                    <h3 style="color:white;">🚨 <strong>Warning!</strong></h3>
+                    <h3 style="color:white;">⚠️ <strong>Warning!</strong></h3>
                     <p style="font-size:18px; color:white;">You have a <strong>high risk</strong> of diabetes.</p>
                     <p style="color:white;">It's time to take action! Consult a healthcare professional for advice on lifestyle changes.</p>
                 </div>
