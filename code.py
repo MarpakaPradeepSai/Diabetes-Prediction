@@ -68,13 +68,17 @@ if st.button('🔍 Predict'):
         result = predict_diabetes(pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree)
         if result == 1:
             st.markdown("""
-                <div style="background-color:red; padding:10px; color:white; text-align:center; border-radius:10px;">
-                    🚨 You have a <strong>high risk</strong> of diabetes.
+                <div style="background-color:red; padding:20px; color:white; text-align:center; border-radius:10px;">
+                    <h3>🚨 Warning!</h3>
+                    <p style="font-size:18px;">You have a <strong>high risk</strong> of diabetes.</p>
+                    <p>It's time to take action! Consult a healthcare professional for advice on lifestyle changes.</p>
                 </div>
             """, unsafe_allow_html=True)
         else:
             st.markdown("""
-                <div style="background-color:green; padding:10px; color:white; text-align:center; border-radius:10px;">
-                    ✅ You have a <strong>low risk</strong> of diabetes.
+                <div style="background-color:green; padding:20px; color:white; text-align:center; border-radius:10px;">
+                    <h3>✅ Good News!</h3>
+                    <p style="font-size:18px;">You have a <strong>low risk</strong> of diabetes.</p>
+                    <p>Keep up the healthy habits! Stay active and maintain a balanced diet.</p>
                 </div>
             """, unsafe_allow_html=True)
