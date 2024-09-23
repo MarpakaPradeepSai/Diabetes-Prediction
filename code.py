@@ -69,16 +69,16 @@ if st.button('🔍 Predict'):
         if result == 1:
             st.markdown("""
                 <div style="background-color:red; padding:20px; color:white; text-align:center; border-radius:10px;">
-                    <h3 style="color:black;">🚨 Warning!</h3>
-                    <p style="font-size:18px; color:black;">You have a <strong>high risk</strong> of diabetes.</p>
-                    <p style="color:black;">It's time to take action! Consult a healthcare professional for advice on lifestyle changes.</p>
+                    <h3 style="color:black;">🚨 <strong>Warning!</strong></h3>
+                    <p style="font-size:18px; color:white;">You have a <strong>high risk</strong> of diabetes.</p>
+                    <p style="color:white;">It's time to take action! Consult a healthcare professional for advice on lifestyle changes.</p>
                 </div>
             """, unsafe_allow_html=True)
         else:
             st.markdown("""
                 <div style="background-color:green; padding:20px; color:white; text-align:center; border-radius:10px;">
-                    <h3 style="color:black;">✅ Good News!</h3>
-                    <p style="font-size:18px; color:black;">You have a <strong>low risk</strong> of diabetes.</p>
-                    <p style="color:black;">Keep up the healthy habits! Stay active and maintain a balanced diet.</p>
+                    <h3 style="color:black;">✅ <strong>Good News!</strong></h3>
+                    <p style="font-size:18px; color:white;">You have a <strong>low risk</strong> of diabetes.</p>
+                    <p style="color:white;">Keep up the healthy habits! Stay active and maintain a balanced diet.</p>
                 </div>
             """, unsafe_allow_html=True)
