@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import time
 
 # Load the trained model
 model = joblib.load('best_naive_bayes_model.pkl')
@@ -41,32 +42,34 @@ insulin = float(insulin) if insulin else None
 bmi = float(bmi) if bmi else None
 diabetes_pedigree = float(diabetes_pedigree) if diabetes_pedigree else None
 
-# Custom button styling
-button_style = """
+# Add custom CSS to change button color without hover or active effect
+st.markdown("""
     <style>
     .stButton > button {
         background-color: #007bff; /* Bootstrap primary blue */
         color: white !important; /* Text color */
         border: none;
-        transition: background-color 0.2s; /* Smooth transition */
+        transition: background-color 0.2s; /* Smooth transition for color change */
     }
-    .stButton > button.clicked {
-        background-color: black !important; /* Black color for clicked state */
+    .stButton > button.red {
+        background-color: red !important; /* Red color for clicked state */
     }
     </style>
-"""
-
-# Display button with custom style
-st.markdown(button_style, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
 # Prediction button
- button_clicked = st.button('Predict 🔎')
+button_clicked = st.button('Predict 🔎')
 
 if button_clicked:
-    # Change button style to indicate it was clicked
-    st.markdown('<style>.stButton > button {background-color: black !important;}</style>', unsafe_allow_html=True)
+    # Change button color to red
+    st.markdown("<script>document.querySelector('.stButton > button').classList.add('red');</script>", unsafe_allow_html=True)
 
-    # Check for input fields
+    # Brief delay to show the color change
+    time.sleep(0.5)
+
+    # Reset button color back to original
+    st.markdown("<script>document.querySelector('.stButton > button').classList.remove('red');</script>", unsafe_allow_html=True)
+
     if None in [pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree]:
         st.warning('⚠️ Please provide all fields.')
     else:
