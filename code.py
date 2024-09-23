@@ -13,7 +13,7 @@ def predict_diabetes(pregnancies, glucose, blood_pressure, skin_thickness, insul
     return prediction[0]
 
 # Streamlit app
-st.title('Diabetes Prediction App')
+st.title('🩺 Diabetes Prediction App 🍩')
 st.write('Enter the details below to check if you have diabetes.')
 
 # Input fields for the first 6 features organized in columns
@@ -61,20 +61,20 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Prediction button
-if st.button('Predict'):
+if st.button('🔍 Predict'):
     if None in [pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree]:
-        st.warning('Please provide all fields or leave them blank if you prefer not to input a value.')
+        st.warning('⚠️ Please provide all fields or leave them blank if you prefer not to input a value.')
     else:
         result = predict_diabetes(pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree)
         if result == 1:
             st.markdown("""
                 <div style="background-color:red; padding:10px; color:white; text-align:center; border-radius:10px;">
-                    You have a high risk of diabetes.
+                    🚨 You have a high risk of diabetes.
                 </div>
             """, unsafe_allow_html=True)
         else:
             st.markdown("""
                 <div style="background-color:green; padding:10px; color:white; text-align:center; border-radius:10px;">
-                    You have a low risk of diabetes.
+                    ✅ You have a low risk of diabetes.
                 </div>
             """, unsafe_allow_html=True)
